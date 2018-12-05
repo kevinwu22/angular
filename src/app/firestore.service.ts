@@ -21,9 +21,9 @@ export class FirestoreService {
           let data = doc.data();
           boards.push({
             key: doc.id,
-            title: data.title,
-            description: data.description,
-            author: data.author
+            name: data.name,
+            email: data.email,
+            phone: data.phone
           });
         });
         observer.next(boards);
@@ -37,9 +37,9 @@ export class FirestoreService {
         let data = doc.data();
         observer.next({
           key: doc.id,
-          title: data.title,
-          description: data.description,
-          author: data.author
+          name: data.name,
+          email: data.email,
+          phone: data.phone
         });
       });
     });
