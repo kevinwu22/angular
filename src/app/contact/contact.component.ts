@@ -30,8 +30,7 @@ export class ContactComponent implements OnInit {
           $key: null,
           fullName: '',
           email: '',
-          mobile: '',
-          location: ''
+          phone: ''
         });
      }
     }
