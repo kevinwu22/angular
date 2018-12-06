@@ -4,11 +4,12 @@ import firestore from 'firebase/firestore';
 
 const settings = {timestampsInSnapshots: true};
 const config = {
-  apiKey: 'YOUR_APIKEY',
-  authDomain: 'YOUR_AUTH_DOMAIN',
-  databaseURL: 'YOUR_DATABASE_URL',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_STORAGE_BUCKET',
+  apiKey: "AIzaSyAY2JKJulIhrl9U3DfqUcTDBu7jpGeX5Q0",
+  authDomain: "crudproject-59a4f.firebaseapp.com",
+  databaseURL: "https://crudproject-59a4f.firebaseio.com",
+  projectId: "crudproject-59a4f",
+  storageBucket: "crudproject-59a4f.appspot.com",
+  messagingSenderId: "990497186939"
 };
 
 @Component({
