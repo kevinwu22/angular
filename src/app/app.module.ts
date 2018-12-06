@@ -20,6 +20,7 @@ import { BoardsCreateComponent } from './boards-create/boards-create.component';
 import { BoardsEditComponent } from './boards-edit/boards-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 const appRoutes: Routes = [
   {
     path: 'boards',
