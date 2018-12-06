@@ -1,79 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatInputModule,
-  MatPaginatorModule,
-  MatProgressSpinnerModule,
-  MatSortModule,
-  MatTableModule,
-  MatIconModule,
-  MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule } from "@angular/material";
-
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { AppRoutingModule } from './app-routing.module';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { BoardsComponent } from './boards/boards.component';
-import { BoardsDetailComponent } from './boards-detail/boards-detail.component';
-import { BoardsCreateComponent } from './boards-create/boards-create.component';
-import { BoardsEditComponent } from './boards-edit/boards-edit.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-const appRoutes: Routes = [
-  {
-    path: 'boards',
-    component: BoardsComponent,
-    data: { title: 'Boards List' }
-  },
-  {
-    path: 'boards-details/:id',
-    component: BoardsDetailComponent,
-    data: { title: 'Boards Details' }
-  },
-  {
-    path: 'boards-create',
-    component: BoardsCreateComponent,
-    data: { title: 'Create Boards' }
-  },
-  {
-    path: 'boards-edit/:id',
-    component: BoardsEditComponent,
-    data: { title: 'Edit Boards' }
-  },
-  { path: '',
-    redirectTo: '/boards',
-    pathMatch: 'full'
-  }
-];
+import { ContactComponent } from './contact/contact.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactService } from './shared/contact.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BoardsComponent,
-    BoardsDetailComponent,
-    BoardsCreateComponent,
-    BoardsEditComponent
+    ContactComponent,
+    ContactListComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
     BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
+    AppRoutingModule,
+    AngularFireModule,
+    AngularFireDatabaseModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
