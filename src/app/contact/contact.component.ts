@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
       this.contactService.insertContact(this.contactService.form.value);
       }
       else {
-      this.contactService.updateContact(this.contactService.form.value);
+      //this.contactService.updateContact(this.contactService.form.value);
       this.showSuccessMessage = true;
       setTimeout(() => this.showSuccessMessage = false, 3000);
       this.submitted = false;
@@ -54,18 +54,16 @@ export class ContactComponent implements OnInit {
   var entry = {
     "fullName": document.getElementById("xfullName").value,
     "email": document.getElementById("xemail").value,
-    "phone": document.getElementById("xphone").value
+    "phone": document.getElementById("xphone").value,
+    "unixtime": Date.now()
     }
 
-    function writeUserData() {
-        var randString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        database.ref('books/' + randString).set(entry);
-      }
+  function writeUserData() {
+   var randString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    database.ref('contacts/' + randString).set(entry);
+   }
 
-      writeUserData();
-  // ...
-
-
+  writeUserData();
 
       }
      }
