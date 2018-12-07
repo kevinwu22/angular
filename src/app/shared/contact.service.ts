@@ -14,7 +14,7 @@ export class ContactService {
     $key: new FormControl(null),
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
-    phone: new FormControl('', [Validators.required, Validators.minLength(10)])
+    phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)])
   });
 
   
